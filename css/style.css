@@ -1,0 +1,181 @@
+html,
+body {
+    background: #222;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+text {
+    text-align: center;
+    color: aliceblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 100px;
+    font-size: 30px;
+}
+
+.view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    perspective: 400;
+}
+
+.plane {
+    width: 120px;
+    height: 120px;
+    transform-style: preserve-3d;
+}
+
+.plane.main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transform: rotateX(60deg) rotateZ(-30deg);
+    animation: rotate 20s infinite linear;
+}
+
+.plane.main .circle {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    transform-style: preserve-3d;
+    border-radius: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 0 60px rgb(220, 20, 130), inset 0 0 60px rgb(220, 20, 130);
+}
+
+.plane.main .circle::before,
+.plane.main .circle::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 10%;
+    height: 10%;
+    border-radius: 100%;
+    background: rgb(220, 20, 130);
+    box-sizing: border-box;
+    box-shadow: 0 0 60px 2px rgb(220, 20, 130);
+}
+
+.plane.main .circle::before {
+    transform: translateZ(-90px);
+}
+
+.plane.main .circle::after {
+    transform: translateZ(90px);
+}
+
+.plane.main .circle:nth-child(1) {
+    transform: rotateZ(72deg) rotateX(63.435deg);
+}
+
+.plane.main .circle:nth-child(2) {
+    transform: rotateZ(144deg) rotateX(63.435deg);
+}
+
+.plane.main .circle:nth-child(3) {
+    transform: rotateZ(216deg) rotateX(63.435deg);
+}
+
+.plane.main .circle:nth-child(4) {
+    transform: rotateZ(288deg) rotateX(63.435deg);
+}
+
+.plane.main .circle:nth-child(5) {
+    transform: rotateZ(360deg) rotateX(63.435deg);
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateX(0) rotateY(0) rotateZ(0);
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
+.text {
+    fill: none;
+    stroke-width: 6;
+    stroke-linejoin: round;
+    stroke-dasharray: 70 330;
+    stroke-dashoffset: 0;
+    -webkit-animation: stroke 6s infinite linear;
+    animation: stroke 6s infinite linear;
+}
+
+.text:nth-child(5n + 1) {
+    stroke: #F2385A;
+    -webkit-animation-delay: -1.2s;
+    animation-delay: -1.2s;
+}
+
+.text:nth-child(5n + 2) {
+    stroke: #F5A503;
+    -webkit-animation-delay: -2.4s;
+    animation-delay: -2.4s;
+}
+
+.text:nth-child(5n + 3) {
+    stroke: #E9F1DF;
+    -webkit-animation-delay: -3.6s;
+    animation-delay: -3.6s;
+}
+
+.text:nth-child(5n + 4) {
+    stroke: #56D9CD;
+    -webkit-animation-delay: -4.8s;
+    animation-delay: -4.8s;
+}
+
+.text:nth-child(5n + 5) {
+    stroke: #3AA1BF;
+    -webkit-animation-delay: -6s;
+    animation-delay: -6s;
+}
+
+@-webkit-keyframes stroke {
+    100% {
+        stroke-dashoffset: -400;
+    }
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: -400;
+    }
+}
+
+
+/* Other styles */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: #111;
+    background-size: .2em 100%;
+    font: 14.5em/1 Open Sans, Impact;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
